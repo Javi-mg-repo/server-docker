@@ -1,2 +1,4 @@
 # Lo que suele estar dentro de las carpetas en MacOS
 .DS_Store
+/data
+/backups
