@@ -7,7 +7,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "PAPER"
-      MEMORY: "2G"
+      MEMORY: "4G"
     volumes:
       - ./data:/data
     restart: unless-stopped
@@ -34,6 +34,13 @@ services:
       - ./data:/data:ro
       - ./backups:/backups
     restart: unless-stopped
+
+  tunnel:
+    image: playitgpt/playit:latest
+    container_name: playit-tunnel
+    restart: unless-stopped
+    volumes:
+      - ./playit:/etc/playit
 
 volumes:
   portainer_data:
