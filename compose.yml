@@ -34,13 +34,11 @@ services:
       - ./data:/data:ro
       - ./backups:/backups
     restart: unless-stopped
-
-  tunnel:
-    image: playitgpt/playit:latest
-    container_name: playit-tunnel
-    restart: unless-stopped
-    volumes:
-      - ./playit:/etc/playit
-
+  playitgg:
+          container_name: playitgg
+          image: dysta/playitgg
+          restart: unless-stopped
+          volumes:
+              - ./secrets:/secrets
 volumes:
   portainer_data:
