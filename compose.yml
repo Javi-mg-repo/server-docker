@@ -14,9 +14,7 @@ services:
       volumes:
         - "./data:/data"
   playit:
-    container_name: playit
-    image: ghcr.io/mafen/playit-docker:latest
-    restart: unless-stopped
-    # If you want to presist the config
-    volumes:
-    - ./config:/etc/playit
+      image: ghcr.io/playit-cloud/playit-agent:0.17
+      network_mode: host
+      environment:
+      - SECRET_KEY=<introducir-contrasena>
